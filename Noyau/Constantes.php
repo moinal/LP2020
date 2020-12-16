@@ -13,6 +13,8 @@ final class Constantes
 
     const REPERTOIRE_NOYAU       = '/Noyau/';
 
+    const REPERTOIRE_EXCEPTIONS  = '/Noyau/Exceptions/';
+
     const REPERTOIRE_CONTROLEURS = '/Controleurs/';
 
 
@@ -22,6 +24,10 @@ final class Constantes
 
     public static function repertoireNoyau() {
         return self::repertoireRacine() . self::REPERTOIRE_NOYAU;
+    }
+
+    public static function repertoireExceptions() {
+        return self::repertoireRacine() . self::REPERTOIRE_EXCEPTIONS;
     }
 
     public static function repertoireVues() {
