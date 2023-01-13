@@ -22,7 +22,7 @@ final class Controleur
             // Nous avons pris le parti de préfixer tous les controleurs par "Controleur"
             $A_urlDecortique[0] = 'ControleurDefaut';
         } else {
-            $A_urlDecortique[0] = 'Controleur' . ucfirst($A_urlDecortique[0]);
+            $A_urlDecortique[0] = 'Controleur' . ucfirst($A_urlDecortique[0]); //echanger
         }
 
         if (empty($A_urlDecortique[1])) {

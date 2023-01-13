@@ -17,6 +17,13 @@ final class ChargementAuto
         return static::_charger($S_fichier);
     }
 
+    public static function chargerClassesDatabase ($S_nomDeClasse)
+    {
+        $S_fichier = Constantes::repertoireDatabase() . "$S_nomDeClasse.php";
+
+        return static::_charger($S_fichier);
+    }
+
     public static function chargerClassesModele ($S_nomDeClasse)
     {
         $S_fichier = Constantes::repertoireModele() . "$S_nomDeClasse.php";
@@ -53,3 +60,4 @@ spl_autoload_register('ChargementAuto::chargerClassesException');
 spl_autoload_register('ChargementAuto::chargerClassesModele');
 spl_autoload_register('ChargementAuto::chargerClassesVue');
 spl_autoload_register('ChargementAuto::chargerClassesControleur');
+spl_autoload_register('ChargementAuto::chargerClassesDatabase');
