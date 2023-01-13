@@ -5,8 +5,8 @@
         <title>My sweet MVC</title>
     </head>
     <body>
-        <?php Vue::show('standard/entete'); ?>
+        <?php View::show('standard/entete'); ?>
         <?php echo $A_view['body'] ?>
-        <?php Vue::show('standard/pied'); ?>
+        <?php View::show('standard/pied'); ?>
     </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-final class Vue
+final class View
 {
     public static function openBuffer()
     {
