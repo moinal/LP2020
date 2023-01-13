@@ -2,12 +2,6 @@
 
 final class Connection{
 
-
-    public static function test(){
-        echo 'glop';
-
-
-    }
     public static function connect($host,$user,$password){
         try
         {

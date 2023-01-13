@@ -56,4 +56,13 @@ class Model{
         $sth = $db->prepare($stmnt);
         return $sth->execute(array_values($A_postParams));
     }
+
+    public static function selectHowMany(){
+        $db = self::initConnection();
+        $stmnt = "SELECt count(*) FROM ".get_called_class();
+        $sth = $db->prepare($stmnt);
+        $sth->execute();
+        $row = $sth->fetch(PDO::FETCH_ASSOC);
+        return $row['count(*)'];
+    }
 }
