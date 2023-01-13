@@ -50,14 +50,14 @@ final class Controller
 
     // On exécute notre triplet
 
-    public function executer()
+    public function execute()
     {
         if (!class_exists($this->_A_peeredUrl['controller'])) {
-            throw new ControleurException($this->_A_peeredUrl['controller'] . " n'est pas un controleur valide.");
+            throw new ControllerException($this->_A_peeredUrl['controller'] . " n'est pas un controleur valide.");
         }
 
         if (!method_exists($this->_A_peeredUrl['controller'], $this->_A_peeredUrl['action'])) {
-            throw new ControleurException($this->_A_peeredUrl['action'] . " du contrôleur " .
+            throw new ControllerException($this->_A_peeredUrl['action'] . " du contrôleur " .
                 $this->_A_peeredUrl['controller'] . " n'est pas une action valide.");
         }
 
@@ -65,7 +65,7 @@ final class Controller
             $this->_A_peeredUrl['action']), array($this->_A_urlParameters, $this->_A_postParams ));
 
         if (false === $B_called) {
-            throw new ControleurException("L'action " . $this->_A_peeredUrl['action'] .
+            throw new ControllerException("L'action " . $this->_A_peeredUrl['action'] .
                 " du contrôleur " . $this->_A_peeredUrl['controller'] . " a rencontré une erreur.");
         }
     }

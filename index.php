@@ -1,7 +1,7 @@
 <?php
 // Ce fichier est le point d'entrée de votre application
 
-    require 'Core/ChargementAuto.php';
+    require 'Core/AutoLoad.php';
     /*
      url pour notre premier test MVC Hello World,
      nous n'avons pas d'action précisée on visera celle par défaut
@@ -18,24 +18,24 @@
     $O_controleur = new Controller($S_controleur, $S_action);
 */
 
-    $S_urlADecortiquer = isset($_GET['url']) ? $_GET['url'] : null;
+    $S_urlToPeer = isset($_GET['url']) ? $_GET['url'] : null;
     $A_postParams = isset($_POST) ? $_POST : null;
 
     View::openBuffer(); // on ouvre le tampon d'affichage, les contrôleurs qui appellent des vues les mettront dedans
 
     try
     {
-        $O_controleur = new Controller($S_urlADecortiquer, $A_postParams);
-        $O_controleur->executer();
+        $O_controller = new Controller($S_urlToPeer, $A_postParams);
+        $O_controller->execute();
     }
-    catch (ControleurException $O_exception)
+    catch (ControllerException $O_exception)
     {
         echo ('Une erreur s\'est produite : ' . $O_exception->getMessage());
     }
 
 
     // Les différentes sous-vues ont été "crachées" dans le tampon d'affichage, on les récupère
-    $contenuPourAffichage = View::getBufferContent();
+    $contentForDisplay = View::getBufferContent();
 
     // On affiche le contenu dans la partie body du gabarit général
-    View::show('gabarit', array('body' => $contenuPourAffichage));
+    View::show('gabarit', array('body' => $contentForDisplay));
