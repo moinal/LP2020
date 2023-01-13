@@ -21,7 +21,7 @@
     $S_urlADecortiquer = isset($_GET['url']) ? $_GET['url'] : null;
     $A_postParams = isset($_POST) ? $_POST : null;
 
-    Vue::ouvrirTampon(); // on ouvre le tampon d'affichage, les contrôleurs qui appellent des vues les mettront dedans
+    Vue::openBuffer(); // on ouvre le tampon d'affichage, les contrôleurs qui appellent des vues les mettront dedans
 
     try
     {
@@ -35,7 +35,7 @@
 
 
     // Les différentes sous-vues ont été "crachées" dans le tampon d'affichage, on les récupère
-    $contenuPourAffichage = Vue::recupererContenuTampon();
+    $contenuPourAffichage = Vue::getBufferContent();
 
     // On affiche le contenu dans la partie body du gabarit général
-    Vue::montrer('gabarit', array('body' => $contenuPourAffichage));
+    Vue::show('gabarit', array('body' => $contenuPourAffichage));

@@ -1,25 +1,25 @@
 <?php
 
-require 'Noyau/Constantes.php';
+require 'Noyau/Constants.php';
 
 final class ChargementAuto
 {
     public static function chargerClassesNoyau ($S_nomDeClasse)
     {
-        $S_fichier = Constantes::repertoireNoyau() . "$S_nomDeClasse.php";
+        $S_fichier = Constants::repertoireNoyau() . "$S_nomDeClasse.php";
         return static::_charger($S_fichier);
     }
 
     public static function chargerClassesException ($S_nomDeClasse)
     {
-        $S_fichier = Constantes::repertoireExceptions() . "$S_nomDeClasse.php";
+        $S_fichier = Constants::repertoireExceptions() . "$S_nomDeClasse.php";
 
         return static::_charger($S_fichier);
     }
 
     public static function chargerClassesModele ($S_nomDeClasse)
     {
-        $S_fichier = Constantes::repertoireModele() . "$S_nomDeClasse.php";
+        $S_fichier = Constants::repertoireModele() . "$S_nomDeClasse.php";
 
         return static::_charger($S_fichier);
     }
@@ -27,14 +27,14 @@ final class ChargementAuto
 
     public static function chargerClassesVue ($S_nomDeClasse)
     {
-        $S_fichier = Constantes::repertoireVues() . "$S_nomDeClasse.php";
+        $S_fichier = Constants::viewsDirectory() . "$S_nomDeClasse.php";
 
         return static::_charger($S_fichier);
     }
 
     public static function chargerClassesControleur ($S_nomDeClasse)
     {
-        $S_fichier = Constantes::repertoireControleurs() . "$S_nomDeClasse.php";
+        $S_fichier = Constants::repertoireControleurs() . "$S_nomDeClasse.php";
 
         return static::_charger($S_fichier);
     }

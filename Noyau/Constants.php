@@ -3,7 +3,7 @@
 // Rappel : nous sommes dans le répertoire Core, voilà pourquoi dans realpath je "remonte d'un cran" pour faire référence
 // à la VRAIE racine de mon application
 
-final class Constantes
+final class Constants
 {
     // Les constantes relatives aux chemins
 
@@ -30,7 +30,7 @@ final class Constantes
         return self::repertoireRacine() . self::REPERTOIRE_EXCEPTIONS;
     }
 
-    public static function repertoireVues() {
+    public static function viewsDirectory() {
         return self::repertoireRacine() . self::REPERTOIRE_VUES;
     }
 
