@@ -38,6 +38,12 @@ final class AutoLoad
 
         return static::_load($S_file);
     }
+    public static function loadDatabaseClass ($S_className)
+    {
+        $S_file = Constants::databseDirectory(). "$S_className.php";
+
+        return static::_load($S_file);
+    }
     private static function _load ($S_fileToLoad)
     {
         if (is_readable($S_fileToLoad))
@@ -53,3 +59,4 @@ spl_autoload_register('AutoLoad::loadExceptionClasses');
 spl_autoload_register('AutoLoad::loadModelClasses');
 spl_autoload_register('AutoLoad::loadViewClasses');
 spl_autoload_register('AutoLoad::loadControllerClass');
+spl_autoload_register('AutoLoad::loadDatabaseClass');
